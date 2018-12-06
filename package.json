@@ -7,7 +7,19 @@
         "flux": "^3.1.3",
         "react-base16-styling": "^0.6.0",
         "react-lifecycles-compat": "^3.0.4",
-        "react-textarea-autosize": "^6.1.0"
+        "react-textarea-autosize": "^6.1.0",
+        "react": "^16.4.0",
+        "react-dom": "^16.4.0",
+        "react-github-button": "^0.1.11",
+        "react-hot-loader": "^3.0.0-beta.6",
+        "react-select": "^1.1.0",
+        "react-test-renderer": "^16.4.0",
+        "sass-loader": "^6.0.7",
+        "sinon": "^4.5.0",
+        "style-loader": "^0.18.2",
+        "webpack": "^3.12.0",
+        "webpack-bundle-size-analyzer": "^2.7.0",
+        "webpack-dev-server": "^2.11.2"
     },
     "devDependencies": {
         "babel-core": "^6.26.3",
@@ -56,7 +68,7 @@
     },
     "scripts": {
         "build": "webpack --config webpack/webpack.config.js -p --display-error-details --progress --optimize-minimize",
-        "prebuild": "npm run test:unit",
+        "prebuild": "",
         "build:demo": "webpack --config webpack/webpack.config-demo.js -p --display-error-details --progress --optimize-minimize",
         "dev": "webpack-dev-server --config webpack/webpack.config-dev.js --open",
         "modules:debug": "./docker/debug.sh",

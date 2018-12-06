@@ -16,8 +16,8 @@ ReactDom.render(
         {/* initialize this one with a name and default collapsed */}
         <JsonViewer
             src={discoveredJson}
-            collapsed={true}
-            name={"feature_set"}
+            collapsed
+            name={false}
             displayDataTypes={false}
             indentWidth={2}
             style={ { fontSize: '8px' } }
