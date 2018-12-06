@@ -11,7 +11,7 @@ export default {
     braceFontWeight: 'bold',
     braceCursor: 'pointer',
 
-    ellipsisFontSize: '18px',
+    ellipsisFontSize: '8px',
     ellipsisLineHeight: '10px',
     ellipsisCursor: 'pointer',
 
@@ -35,22 +35,22 @@ export default {
 
     variableValuePaddingRight: '6px',
 
-    nullFontSize: '11px',
+    nullFontSize: '8px',
     nullFontWeight: 'bold',
-    nullPadding: '1px 2px',
+    nullPadding: '0px 0px',
     nullBorderRadius: '3px',
 
-    nanFontSize: '11px',
+    nanFontSize: '8px',
     nanFontWeight: 'bold',
     nanPadding: '1px 2px',
     nanBorderRadius: '3px',
 
-    undefinedFontSize: '11px',
+    undefinedFontSize: '8px',
     undefinedFontWeight: 'bold',
     undefinedPadding: '1px 2px',
     undefinedBorderRadius: '3px',
 
-    dataTypeFontSize: '11px',
+    dataTypeFontSize: '8px',
     dataTypeMarginRight: '4px',
     datatypeOpacity: '0.8',
 

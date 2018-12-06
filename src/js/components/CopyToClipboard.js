@@ -29,9 +29,9 @@ export default class extends React.PureComponent {
     handleCopy = () => {
         const container = document.createElement('textarea');
         const { clickCallback, src, namespace } = this.props;
-
+        console.log(this.props);
         container.innerHTML = JSON.stringify(
-            this.clipboardValue(src),
+            namespace,
             null,
             '  '
         );

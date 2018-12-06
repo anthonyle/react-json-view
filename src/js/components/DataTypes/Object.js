@@ -105,6 +105,39 @@ class RjvObject extends React.PureComponent {
         );
     }
 
+
+
+
+
+    getObjectPreview = (object) => {
+        const maxPreviewKeys = this.props.maxPreviewKeys || 4;
+        const displayObj = {};
+        let displayString = '';
+        console.log(object);
+        if (JSON.stringify(object).length < 200) {
+            return JSON.stringify(object);
+        }
+        Object.entries(object).forEach(([key, value]) => {
+            if (displayString.length > 200) {
+                return;
+            }
+            let stringValue = JSON.stringify(value);
+            if (typeof value === 'object' && value !== null) {
+                if (stringValue.length > 80) {
+                    stringValue = stringValue.slice(0, 80) + '... }';
+                }
+                displayString += `${key}: ${stringValue} }, `;
+            } else if (Array.isArray(value)) {
+                displayString += `${key}: [...], `;
+            } else {
+                stringValue = stringValue.length > 80 ? stringValue.slice(0, 80) + '...' : stringValue;
+                displayString += `${key}: ${stringValue}, `;
+            }
+        });
+        displayString = displayString.slice(0, -2);
+        return displayString;
+    }
+
     getEllipsis = () => {
         const { size } = this.state;
 
@@ -118,7 +151,7 @@ class RjvObject extends React.PureComponent {
                     class="node-ellipsis"
                     onClick={this.toggleCollapsed}
                 >
-                    ...
+                    { typeof this.props.src === 'object' ? this.getObjectPreview(this.props.src) : '...' }
                 </div>
             );
         }
@@ -288,7 +321,7 @@ class RjvObject extends React.PureComponent {
                         key={variable.name + '_' + namespace}
                         variable={variable}
                         singleIndent={SINGLE_INDENT}
-                        namespace={namespace}
+                        namespace={namespace.concat(variable.name)}
                         type={this.props.type}
                         {...props}
                     />

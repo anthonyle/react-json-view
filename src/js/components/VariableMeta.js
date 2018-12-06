@@ -102,6 +102,7 @@ export default class extends React.PureComponent {
     }
 
     render = () => {
+      console.log(this.props);
         const {
             theme,
             onDelete,
@@ -115,13 +116,14 @@ export default class extends React.PureComponent {
                 {...Theme(theme, 'object-meta-data')}
                 class='object-meta-data'
                 onClick={(e)=>{
+                    console.log(e);
                     e.stopPropagation();
                 }}
             >
                 {/* size badge display */}
                 {this.getObjectSize()}
                 {/* copy to clipboard icon */}
-                {enableClipboard
+                {false
                     ? (<CopyToClipboard
                         clickCallback={enableClipboard}
                         {...{src, theme, namespace}} />)

@@ -8,6 +8,7 @@ import "./../../style/scss/rjv-demo.scss"
 import "react-select/dist/react-select.css"
 import "react-github-button/assets/style.css"
 
+
 //index entrypoint component
 export default class extends React.PureComponent {
     constructor(props) {
